@@ -73,3 +73,5 @@ alias ls='ls --color'
 
 # Shell integrations
 eval "$(fzf --zsh)"
+
+PATH=$PATH:/usr/local/go/bin
