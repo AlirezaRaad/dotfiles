@@ -1,0 +1,33 @@
+font-size = 18
+
+font-family="JetBrainsMono Nerd Font"
+theme = "Breeze"
+background-opacity = 0
+adjust-cell-height = 35%
+
+mouse-hide-while-typing = true
+window-save-state = always
+
+
+keybind = super+s=reload_config
+
+#keybind = super+s+n=new_windows
+
+# tabs
+keybind = super+shift+c=new_tab
+
+keybind = super+shift+l=next_tab
+keybind = super+shift+h=previous_tab
+
+# quick tab switch
+#keybind = super+s+1=goto_tab:1
+#keybind = super+s+2=goto_tab:2
+#keybind = super+s+3=goto_tab:3
+#keybind = super+s+4=goto_tab:4
+#keybind = super+s+5=goto_tab:5
+#keybind = super+s+6=goto_tab:6
+#keybind = super+s+7=goto_tab:7
+#keybind = super+s+8=goto_tab:8
+#keybind = super+s+9=goto_tab:9
+
+copy-on-select = clipboard
