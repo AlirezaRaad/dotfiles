@@ -6,7 +6,8 @@ return {
 			direction = "float", -- floating terminal instead of split
 			float_opts = {
 				border = "curved", -- terminal window border style, optional
-				winblend = 3, -- transparency level, optional
+				winblend = 0, -- transparency level, optional
+				winhighlight = "NormalFloat:Normal,FloatBorder:FloatBorder",
 			},
 			-- other options you want to customize...
 		})
