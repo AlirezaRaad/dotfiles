@@ -71,8 +71,19 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 
+# Arrow & home/end keys
+bindkey '\e[1;5D' backward-word  # Ctrl + Left Arrow
+bindkey '\e[1;5C' forward-word   # Ctrl + Right Arrow
+
+
 # Shell integrations
 eval "$(fzf --zsh)"
 
 PATH=$PATH:/usr/local/go/bin
 alias v2rayN='~/Music/v2rayN-linux-64/v2rayN'
+
+if [[ -n $TMUX ]]; then
+  # Disable precmd and preexec functions for title updates
+  function precmd() { :; }
+  function preexec() { :; }
+fi
