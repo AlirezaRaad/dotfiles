@@ -6,14 +6,19 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.gofmt, -- Go formatter
+				null_ls.builtins.formatting.markdownlint_cli2,
+				null_ls.builtins.formatting.htmlbeautifier, -- HTML formatting
+				null_ls.builtins.diagnostics.htmlhint,
 				-- You can add other null-ls sources here if needed
 			},
 			on_attach = function(client, bufnr)
-				-- Format on save for all attached clients that support it
 				if client.supports_method("textDocument/formatting") then
-					vim.api.nvim_clear_autocmds({ group = "LspFormatting", buffer = bufnr })
+					-- Create group first, then clear autocmds
+					local group = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
+					vim.api.nvim_clear_autocmds({ group = group, buffer = bufnr })
+
 					vim.api.nvim_create_autocmd("BufWritePre", {
-						group = vim.api.nvim_create_augroup("LspFormatting", { clear = true }),
+						group = group,
 						buffer = bufnr,
 						callback = function()
 							vim.lsp.buf.format({ bufnr = bufnr })
