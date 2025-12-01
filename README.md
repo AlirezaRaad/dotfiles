@@ -12,6 +12,10 @@ wpctl set-volume 52 1.0
 ```
 MasonInstall superhtml htmlbeautifier htmlhint markdownlint-cli2
 ```
+
+```
+https://github.com/fatih/gomodifytags
+```
 ## tmux
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
